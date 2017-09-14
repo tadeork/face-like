@@ -8,7 +8,7 @@ export class UserService {
   url = 'http://localhost:3000/users';
   user: User;
 
-  constructor(private http: Http) { 
+  constructor(private http: Http) {
     this.http.get(this.url).subscribe();
   }
 

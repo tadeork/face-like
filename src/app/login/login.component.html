@@ -1,12 +1,12 @@
 <div class="row">
-  <form (ngSubmit)="logUser()">
+  <form #loginForm="ngForm" (ngSubmit)="logUser()">
   <div class="six columns">
     <label for="username">Your email</label>
-    <input class="u-full-width" autocomplete="off" name="userEmail" type="text" [(ngModel)]="userEmail" placeholder="user@service.com">
+    <input class="u-full-width" autocomplete="off" type="text" (ngModel)="login.email" placeholder="user@service.com">
   </div>
   <div class="six columns">
     <label for="username">Your secret</label>
-    <input class="u-full-width" name="password" type="password" [(ngModel])="password" />
+    <input class="u-full-width" (ngModel)="login.password" type="password">
   </div> 
   <button type="submit" class="button-primary" >Get alienated!</button>
 </form>
