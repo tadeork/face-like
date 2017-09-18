@@ -12,10 +12,11 @@ export class AuthenticationService {
   constructor(private http: Http) { }
 
   login(email: string, password: string) {
+    console.log(`${this.urlBackend}?email=${email}`);
     return this.http.get(`${this.urlBackend}?email=${email}`)
       .map((response: Response) => {
         const user = response.json();
-        console.log(`${user}`);
+        console.log(JSON.stringify(user));
         if ( user.password === password ) {
           localStorage.setItem('presentUser', JSON.stringify(user));
         }
