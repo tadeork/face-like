@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from '../services/authentication.service';
 import { Login } from '../../models/Login';
 
 @Component({
@@ -7,15 +9,35 @@ import { Login } from '../../models/Login';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  login: Login;
+  @Output() loginModel: Login;
+  returnUrl: string;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private auth: AuthenticationService
+    ) { }
 
   ngOnInit() {
+    this.auth.logout();
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.loginModel = {
+      email: '',
+      password: ''
+    };
   }
 
-  logUser(): void {
-    console.log(`${this.login.email} ${this.login.password}`);
+  logUser() {
+    console.log(`${this.loginModel.email} ${this.loginModel.password}`);
+    this.auth.login(this.loginModel.email, this.loginModel.password)
+      .subscribe( data => { this.router.navigate([this.returnUrl]);
+      },
+        error => console.log('error'));
+  }
+  // conectarse al servicio y probar que sea un usuario válido
+
+  login(): void {
+    console.log(`${this.loginModel.email} ${this.loginModel.password}`);
   }
 
 }
