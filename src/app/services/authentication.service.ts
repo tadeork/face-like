@@ -7,18 +7,18 @@ import { User } from '../../models/User';
 
 @Injectable()
 export class AuthenticationService {
+  user: User;
   urlBackend = 'http://localhost:3000/users/';
 
   constructor(private http: Http) { }
 
   login(email: string, password: string) {
-    console.log(`${this.urlBackend}?email=${email}`);
     return this.http.get(`${this.urlBackend}?email=${email}`)
       .map((response: Response) => {
         const user = response.json();
-        console.log(JSON.stringify(user));
-        if ( user.password === password ) {
-          localStorage.setItem('presentUser', JSON.stringify(user));
+        this.user = user[0];
+        if ( user[0].password === password ) {
+          localStorage.setItem('presentUser', JSON.stringify(this.user));
         }
         return user;
       } );

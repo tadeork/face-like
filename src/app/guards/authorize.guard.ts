@@ -14,7 +14,7 @@ export class AuthorizeGuard implements CanActivate {
     return false;
   }
 
-  // cambiar este método a un servicio que consulte con el backend la existencia del usuario
+  // TODO cambiar este método a un servicio que consulte con el backend la existencia del usuario
   private isAuthorized(): boolean {
     const isAuthorized: boolean = Math.random() < 0.5;
     console.log(`is authorized = ${isAuthorized}`);

@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       posts: [],
       avatar: ''
     };
+    this.user = JSON.parse(localStorage.getItem('presentUser'));
    }
 
   ngOnInit() {
