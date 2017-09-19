@@ -1,3 +1,15 @@
 <div class="head-user">
-  <h2>Usuario {{ user.firstName }}</h2>
+  <h4>User name: {{ user.userName }}</h4>
+</div>
+
+<div class="six columns">
+  <ul>
+    <p>{{ user.firstName }} {{ user.lastName }}</p>
+    <img class="circled-img" src="{{user.avatar}}" alt="{{user.userName}}">
+  </ul>
+  <h5>Objectified people of {{user.firstName}}</h5>
+  <ul>
+    <li *ngFor="let friend of friendList">{{ friend.firstName}}</li>
+  </ul>
+
 </div>

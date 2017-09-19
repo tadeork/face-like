@@ -4,17 +4,21 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { appRoutes} from './app.route';
-import { AppComponent } from './app.component';
-import { UserService } from './services/user.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { FriendsComponent } from './friends/friends.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProfileComponent } from './profile/profile.component';
+
 import { AuthorizeGuard } from './guards/authorize.guard';
+
+import { UserService } from './services/user.service';
 import { AlertService } from './services/alert.service';
+import { FriendsService } from './services/friends.service';
 import {AuthenticationService} from './services/authentication.service';
 
+import { appRoutes} from './app.route';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,8 @@ import {AuthenticationService} from './services/authentication.service';
     HomeComponent,
     LoginComponent,
     FriendsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProfileComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -35,6 +40,7 @@ import {AuthenticationService} from './services/authentication.service';
     AuthorizeGuard,
     AlertService,
     AuthenticationService,
+    FriendsService,
   ] ,
   bootstrap: [AppComponent]
 })

@@ -26,7 +26,6 @@ export class AuthenticationService {
 
   logout() {
     localStorage.removeItem('presentUser');
-    console.log('usuario deslogueado');
   }
 
 }
