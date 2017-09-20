@@ -6,9 +6,10 @@
     <img class="circled-img" src="{{user.avatar}}" alt="{{user.userName}}">
     <p>{{ user.firstName }} {{ user.lastName }}</p>
     <p>{{user.email}}</p>
-  <h5>Objectified people of {{user.firstName}}</h5>
-  <ul>
+  <h5>Objectified people by {{user.firstName}}</h5>
+  <ul *ngIf="showFriends">
     <li *ngFor="let friend of friendList">{{ friend.firstName}}</li>
   </ul>
 
+  <app-profile (hide)="editProfile($event)" [user]="user"></app-profile>
 </div>

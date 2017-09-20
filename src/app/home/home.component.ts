@@ -1,9 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { User } from '../../models/User';
 import { FriendsService } from '../services/friends.service';
 import {Friend} from '../../models/Friend';
-import {Observable} from "rxjs/Observable";
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-home',
@@ -14,11 +13,22 @@ export class HomeComponent implements OnInit, OnDestroy {
   user: User;
   friendObs: Observable<Friend>[] = [];
   friendList: Friend[] = [];
+  showFriends = true;
 
-  constructor(
-    private route: ActivatedRoute,
-    private friendsServ: FriendsService
-  ) {
+  constructor( private friendsServ: FriendsService ) { }
+
+  friends(): void {
+    this.friendObs = this.friendsServ._getAllFriends(this.user.friends);
+    this.friendObs.forEach( friend => friend.subscribe(
+      guy => this.friendList.push(guy)
+    ));
+  }
+
+  editProfile(edit: boolean): void {
+    this.showFriends = !this.showFriends;
+  }
+
+  ngOnInit() {
     this.user = {
       lastName: '',
       firstName: '',
@@ -30,20 +40,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     };
     this.user = JSON.parse(localStorage.getItem('presentUser'));
     this.friends();
-   }
-
-  friends(): void {
-    this.friendObs = this.friendsServ._getAllFriends(this.user.friends);
-    this.friendObs.forEach( friend => friend.subscribe(
-      guy => this.friendList.push(guy)
-    ));
-  }
-
-  ngOnInit() {
   }
 
   ngOnDestroy() {
-    this.friendList = [];
   }
 
 }

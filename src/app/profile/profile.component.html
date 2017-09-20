@@ -1,3 +1,6 @@
-<p>
-  profile works!
-</p>
+<button (click)="editProfile()">Edit profile</button>
+<div *ngIf="edit">
+  <input type="text" [(ngModel)]="user.email">
+  <input type="text" [(ngModel)]="user.firstName">
+  <input type="text" [(ngModel)]="user.lastName">
+</div>
