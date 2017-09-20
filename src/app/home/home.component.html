@@ -1,18 +1,1 @@
-<div class="head-user">
-  <h4>User name: {{ user.userName }}</h4>
-</div>
-
-<div class="six columns">
-    <img class="circled-img" src="{{user.avatar}}" alt="{{user.userName}}">
-    <p>{{ user.firstName }} {{ user.lastName }}</p>
-    <p>{{user.email}}</p>
-
-  <div *ngIf="showFriends">
-    <h5>Objectified people by {{user.firstName}}</h5>
-    <ul>
-      <li *ngFor="let friend of friendList">{{ friend.firstName}}</li>
-    </ul>
-  </div>
-
-  <app-profile (hide)="editProfile($event)" [user]="user"></app-profile>
-</div>
+<p>home works</p>

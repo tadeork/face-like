@@ -20,6 +20,7 @@ import {AuthenticationService} from './services/authentication.service';
 import { appRoutes} from './app.route';
 import { AppComponent } from './app.component';
 import { FriendsPipe } from './pipes/friends.pipe';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FriendsPipe } from './pipes/friends.pipe';
     FriendsComponent,
     NotFoundComponent,
     ProfileComponent,
-    FriendsPipe
+    FriendsPipe,
+    UserComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
