@@ -12,8 +12,8 @@ import {Observable} from "rxjs/Observable";
 })
 export class HomeComponent implements OnInit, OnDestroy {
   user: User;
+  friendObs: Observable<Friend>[] = [];
   friendList: Friend[] = [];
-  friendsObs: Observable<Friend>[];
 
   constructor(
     private route: ActivatedRoute,
@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit, OnDestroy {
    }
 
   friends(): void {
-    this.friendsObs = this.friendsServ._getAllFriends(this.user.friends);
-    this.friendsObs.forEach(friend => friend.subscribe(
+    this.friendObs = this.friendsServ._getAllFriends(this.user.friends);
+    this.friendObs.forEach( friend => friend.subscribe(
       guy => this.friendList.push(guy)
     ));
   }

@@ -19,6 +19,7 @@ import {AuthenticationService} from './services/authentication.service';
 
 import { appRoutes} from './app.route';
 import { AppComponent } from './app.component';
+import { FriendsPipe } from './pipes/friends.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AppComponent } from './app.component';
     LoginComponent,
     FriendsComponent,
     NotFoundComponent,
-    ProfileComponent
+    ProfileComponent,
+    FriendsPipe
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
