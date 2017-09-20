@@ -35,7 +35,6 @@ export class UserComponent implements OnInit, OnDestroy {
       email: '',
       userName: '',
       friends: [],
-      posts: [],
       avatar: ''
     };
     this.user = JSON.parse(localStorage.getItem('presentUser'));

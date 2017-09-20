@@ -1,5 +1,3 @@
-import { Post } from './Post';
-
 export interface User {
     id?: number;
     lastName: string;
@@ -7,6 +5,5 @@ export interface User {
     email: string;
     userName: string;
     friends: Array<any>;
-    posts: Array<Post>;
     avatar: string;
 }

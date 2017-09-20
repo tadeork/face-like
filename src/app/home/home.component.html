@@ -1,1 +1,12 @@
-<p>home works</p>
+<p>read all friends posts</p>
+
+<div class="row">
+  <div class="columns three">
+    <img src="{{user.avatar}}" alt="" sizes="50%">
+  </div>
+  <div class="columns nine" *ngFor="let post of obsPosts | async ">
+    <p>{{post.id}}</p>
+    <p>{{post.contentPost}}</p>
+    <p>{{post.likes}}</p>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { User } from '../../models/User';
-import { FriendsService } from '../services/friends.service';
-import {Friend} from '../../models/Friend';
+import {PostsService} from '../services/posts.service';
+import {Post} from '../../models/Post';
+import {User} from '../../models/User';
 import {Observable} from 'rxjs/Observable';
 
 @Component({
@@ -10,36 +10,15 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  posts: Post[] = [];
+  obsPosts: Observable<Post[]>;
   user: User;
-  friendObs: Observable<Friend>[] = [];
-  friendList: Friend[] = [];
-  showFriends = true;
 
-  constructor( private friendsServ: FriendsService ) { }
-
-  friends(): void {
-    this.friendObs = this.friendsServ._getAllFriends(this.user.friends);
-    this.friendObs.forEach( friend => friend.subscribe(
-      guy => this.friendList.push(guy)
-    ));
-  }
-
-  editProfile(edit: boolean): void {
-    this.showFriends = !this.showFriends;
-  }
+  constructor(private postsServ: PostsService) { }
 
   ngOnInit() {
-    this.user = {
-      lastName: '',
-      firstName: '',
-      email: '',
-      userName: '',
-      friends: [],
-      posts: [],
-      avatar: ''
-    };
     this.user = JSON.parse(localStorage.getItem('presentUser'));
-    this.friends();
+    this.obsPosts = this.postsServ._getUserPosts(this.user.id);
   }
 
   ngOnDestroy() {

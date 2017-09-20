@@ -4,6 +4,5 @@ export interface Friend {
   firstName: string;
   email: string;
   userName: string;
-  friends: Array<any>;
   avatar: string;
 }

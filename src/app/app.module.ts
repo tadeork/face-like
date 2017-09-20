@@ -15,12 +15,14 @@ import { AuthorizeGuard } from './guards/authorize.guard';
 import { UserService } from './services/user.service';
 import { AlertService } from './services/alert.service';
 import { FriendsService } from './services/friends.service';
-import {AuthenticationService} from './services/authentication.service';
+import { AuthenticationService } from './services/authentication.service';
 
 import { appRoutes} from './app.route';
 import { AppComponent } from './app.component';
 import { FriendsPipe } from './pipes/friends.pipe';
 import { UserComponent } from './user/user.component';
+import { PostsComponent } from './home/posts/posts.component';
+import { PostsService } from './services/posts.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { UserComponent } from './user/user.component';
     NotFoundComponent,
     ProfileComponent,
     FriendsPipe,
-    UserComponent
+    UserComponent,
+    PostsComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -45,6 +48,7 @@ import { UserComponent } from './user/user.component';
     AlertService,
     AuthenticationService,
     FriendsService,
+    PostsService,
   ] ,
   bootstrap: [AppComponent]
 })
