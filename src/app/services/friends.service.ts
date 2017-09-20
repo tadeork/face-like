@@ -15,12 +15,14 @@ export class FriendsService {
     return this.http.get(`${this.urlFriends}${id}`).map(friend => friend.json() as Friend);
   }
 
-  _getAllFriends(friends: any): Observable<Friend>[] {
+  _getAllFriends(friends: any): Observable<Observable<Friend>[]> {
     const friendsObservables: Observable<Friend>[] = [];
+    const friendList: Friend[] = [];
     friends.forEach( friend => {
       friendsObservables.push(this._getFriend(friend.id));
     });
-    return friendsObservables;
+    const resp = Observable.merge(friendsObservables);
+    return resp;
   }
 
 }

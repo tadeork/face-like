@@ -3,10 +3,9 @@
 </div>
 
 <div class="six columns">
-  <ul>
-    <p>{{ user.firstName }} {{ user.lastName }}</p>
     <img class="circled-img" src="{{user.avatar}}" alt="{{user.userName}}">
-  </ul>
+    <p>{{ user.firstName }} {{ user.lastName }}</p>
+    <p>{{user.email}}</p>
   <h5>Objectified people of {{user.firstName}}</h5>
   <ul>
     <li *ngFor="let friend of friendList">{{ friend.firstName}}</li>
