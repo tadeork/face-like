@@ -5,8 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FriendsPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  transform(friends: any, user: any): any {
+    if (friends) {
+      return friends.filter( friend => friend.id !== user.id);
+    }
   }
 
 }

@@ -22,4 +22,8 @@ export class UserService {
     this.http.patch(`${this.url}/${user.id}`, body, this.options).subscribe();
   }
 
+  _getUser(): User {
+    return JSON.parse(localStorage.getItem('presentUser'));
+  }
+
 }

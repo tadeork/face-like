@@ -24,6 +24,7 @@ import { FriendsPipe } from './pipes/friends.pipe';
 import { UserComponent } from './user/user.component';
 import { PostsComponent } from './home/posts/posts.component';
 import { PostsService } from './services/posts.service';
+import { AlreadyFriendPipe } from './pipes/already-friend.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PostsService } from './services/posts.service';
     ProfileComponent,
     FriendsPipe,
     UserComponent,
-    PostsComponent
+    PostsComponent,
+    AlreadyFriendPipe
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

@@ -1,14 +1,22 @@
-<p>
-  friends works!
-</p>
 <div class="row">
+  <h5>You can add as reify</h5>
   <div class="columns six">
     <ul>
-      <li *ngFor="let friend of friends | async">
+      <li *ngFor="let friend of friendsObs | async | friends:user | alreadyFriend:user ">
         <span>{{ friend.firstName}}</span>
-        <a href="#" type="button">Add</a>
+        <button href="#" (click)="addFriend(friend)" type="button">Add</button>
       </li>
     </ul>
   </div>
 </div>
-<!-- TODO podría utilizar aquí un pipe para filtrar el propio usuario -->
+<div class="row">
+  <h5>Already friends</h5>
+  <div class="columns six">
+    <ul>
+      <li *ngFor="let friend of friendsObs | async | friends:user | alreadyFriend:user ">
+        <span>{{ friend.firstName}}</span>
+        <button href="#" (click)="addFriend(friend)" type="button">Add</button>
+      </li>
+    </ul>
+  </div>
+</div>
