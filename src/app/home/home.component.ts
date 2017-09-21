@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    // this.postsServ._getAllPosts(this.user);
   }
 
 }

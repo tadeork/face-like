@@ -2,11 +2,12 @@
 
 <div class="row">
   <div class="columns three">
-    <img class="circled-img half" src="{{user.avatar}}" alt="">
+    <h6>{{user.firstName}}</h6>
   </div>
-  <div class="columns nine" *ngFor="let post of obsPosts | async ">
-    <p>{{post.id}}</p>
-    <p>{{post.contentPost}}</p>
-    <p>{{post.likes}}</p>
+  <div class="columns nine" >
+    <div *ngFor="let post of obsPosts | async ">
+
+      <app-posts [postContent]="post"></app-posts>
+    </div>
   </div>
 </div>

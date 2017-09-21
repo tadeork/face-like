@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Post} from '../../../models/Post';
+import {PostsService} from '../../services/posts.service';
 
 @Component({
   selector: 'app-posts',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
+  @Input() postContent: Post;
 
-  constructor() { }
+  constructor(private postServ: PostsService) { }
 
   ngOnInit() {
   }
 
+  likePost(): void {
+    // console.log(`${this.postContent.id}`);
+    this.postContent.likes++;
+    this.postServ._updateLike(this.postContent);
+  }
 }
