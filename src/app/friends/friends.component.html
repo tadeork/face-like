@@ -13,9 +13,9 @@
   <h5>Already friends</h5>
   <div class="columns six">
     <ul>
-      <li *ngFor="let friend of friendsObs | async | friends:user | alreadyFriend:user ">
+      <li *ngFor="let friend of friendList">
         <span>{{ friend.firstName}}</span>
-        <button href="#" (click)="addFriend(friend)" type="button">Add</button>
+        <button href="#" (click)="removeFriend(friend)" type="button">Remove</button>
       </li>
     </ul>
   </div>
