@@ -57,7 +57,6 @@ export class FriendsComponent implements OnInit {
   }
 
   removeFriend(friend: Friend): void {
-    console.log(friend);
     this.user.friends.splice(friend.id, 1);
     this.friendsServ._updateFriends(this.user);
     this.showPeople();

@@ -23,9 +23,4 @@ export class FriendsService {
   }
 
   // todo relacionar amistad
-  // TODO amigos existentes
-  // TODO agregar a amigos
-  // TODO eliminar amigo
-
-
 }
