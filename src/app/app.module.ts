@@ -14,8 +14,9 @@ import { AuthorizeGuard } from './guards/authorize.guard';
 
 import { UserService } from './services/user.service';
 import { AlertService } from './services/alert.service';
-import { FriendsService } from './services/friends.service';
+import { FriendsListService } from './services/friends-list.service';
 import { AuthenticationService } from './services/authentication.service';
+import { FriendsService } from './friends/friends.service';
 
 import { appRoutes} from './app.route';
 import { AppComponent } from './app.component';
@@ -47,8 +48,9 @@ import { PostsService } from './services/posts.service';
     AuthorizeGuard,
     AlertService,
     AuthenticationService,
-    FriendsService,
+    FriendsListService,
     PostsService,
+    FriendsService,
   ] ,
   bootstrap: [AppComponent]
 })

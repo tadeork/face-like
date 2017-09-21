@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { User } from '../../models/User';
-import { FriendsService } from '../services/friends.service';
+import { FriendsListService } from '../services/friends-list.service';
 import {Friend} from '../../models/Friend';
 import {Observable} from 'rxjs/Observable';
 
@@ -15,7 +15,7 @@ export class UserComponent implements OnInit, OnDestroy {
   friendList: Friend[] = [];
   showFriends = true;
 
-  constructor( private friendsServ: FriendsService ) { }
+  constructor( private friendsServ: FriendsListService ) { }
 
   friends(): void {
     this.friendObs = this.friendsServ._getAllFriends(this.user.friends);

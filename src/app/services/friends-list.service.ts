@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class FriendsService {
+export class FriendsListService {
   urlFriends = 'http://localhost:3000/users/';
 
   constructor(private http: Http) { }

@@ -17,5 +17,8 @@ export class PostsService {
 
   }
 
-  _
+  // TODO buscar posts de los usuarios amigos
+  // TODO buscar posts del usuario
+  // TODO dar like a los posts
+  // TODO ordenar por fecha (crear un pipe)
 }

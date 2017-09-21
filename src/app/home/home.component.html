@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="columns three">
-    <img src="{{user.avatar}}" alt="" sizes="50%">
+    <img class="circled-img half" src="{{user.avatar}}" alt="">
   </div>
   <div class="columns nine" *ngFor="let post of obsPosts | async ">
     <p>{{post.id}}</p>

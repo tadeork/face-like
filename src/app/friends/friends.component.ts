@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Friend } from '../../models/Friend';
 import { Observable } from 'rxjs/Observable';
+import {FriendsService} from './friends.service';
 
 @Component({
   selector: 'app-friends',
@@ -8,11 +9,16 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./friends.component.css']
 })
 export class FriendsComponent implements OnInit {
-  friends: Friend[];
+  friends: Observable<Friend[]>;
 
-  constructor() { }
+  constructor(private friendsServ: FriendsService ) { }
 
   ngOnInit() {
+    this.showPeople();
+  }
+
+  showPeople(): void {
+    this.friends = this.friendsServ._getAllUsers();
   }
 
 }

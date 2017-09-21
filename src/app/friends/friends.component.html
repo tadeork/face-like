@@ -1,3 +1,14 @@
 <p>
   friends works!
 </p>
+<div class="row">
+  <div class="columns six">
+    <ul>
+      <li *ngFor="let friend of friends | async">
+        <span>{{ friend.firstName}}</span>
+        <a href="#" type="button">Add</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- TODO podría utilizar aquí un pipe para filtrar el propio usuario -->
