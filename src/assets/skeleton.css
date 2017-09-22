@@ -426,3 +426,8 @@ there.
 .thumb-profile{
   width: 25%;
 }
+
+.name-post {
+  color:  red;
+  background: black;
+}
