@@ -20,12 +20,13 @@ export class PostsService {
     return this.http.get(`${this.urlPosts}?uid=${userId}`).map(post => post.json());
  }
 
-  _getAllPosts(user: User): Observable<Observable<Post[]>>{
+  _getAllPosts(user: User): Observable<Observable<Post[]>> {
     const postsObs: Observable<Post[]>[] = [];
     user.friends.forEach( friend => {
       postsObs.push(this._getUserPosts(friend.id));
     });
     postsObs.push(this._getUserPosts(user.id));
+    // este observable debe ser de Rx sino merge no funciona
     return Observable.merge(postsObs);
   }
 
@@ -33,8 +34,5 @@ export class PostsService {
     const body = JSON.stringify(post);
     this.http.patch(`${this.urlPosts}/${post.id}`, body, this.options).subscribe();
   }
-
-  // TODO buscar posts de los usuarios amigos
-  // TODO buscar posts del usuario
   // TODO ordenar por fecha (crear un pipe)
 }

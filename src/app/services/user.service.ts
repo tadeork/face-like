@@ -26,4 +26,8 @@ export class UserService {
     return JSON.parse(localStorage.getItem('presentUser'));
   }
 
+  _getUserName(uid: number): Observable<User> {
+    return this.http.get(`${this.url}/${uid}`).map( resp => resp.json());
+  }
+
 }
