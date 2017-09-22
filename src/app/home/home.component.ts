@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {PostsService} from '../services/posts.service';
 import {Post} from '../../models/Post';
 import {User} from '../../models/User';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
   selector: 'app-home',
@@ -18,11 +18,23 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('presentUser'));
-    this.obsPosts = this.postsServ._getUserPosts(this.user.id);
+    this.postsServ._getAllPosts(this.user).subscribe(post => {
+      post.subscribe( friendPost => {
+        if (friendPost.length) {
+          this.posts.push(...friendPost);
+        }
+      });
+    });
+    // this.obsPosts = this.postsServ._getUserPosts(this.user.id);
+    // this.friendsPosts(this.user);
   }
 
   ngOnDestroy() {
     // this.postsServ._getAllPosts(this.user);
   }
-
+  friendsPosts(user: User): void {
+    user.friends.forEach(friend => {
+      this.obsPosts.merge(this.postsServ._getUserPosts(friend.id));
+    });
+  }
 }
