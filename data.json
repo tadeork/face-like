@@ -1,0 +1,151 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "lastName": "Will",
+      "firstName": "Diego",
+      "email": "diego@hotmail.com",
+      "userName": "Vicenta_Willms",
+      "password": "123abc",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/GavicoInd/128.jpg",
+      "friends": [
+        {
+          "id": 1
+        },
+        {
+          "id": 4
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "lastName": "Wisoky",
+      "firstName": "Darrin",
+      "email": "Cassandre.Dietrich@hotmail.com",
+      "userName": "Kim.Cartwright78",
+      "password": "123abc",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/pcridesagain/128.jpg",
+      "friends": [
+        {
+          "id": 0
+        },
+        {
+          "id": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "lastName": "Pfannerstill",
+      "firstName": "Vicente",
+      "email": "Marilie_Dooley98@gmail.com",
+      "userName": "Leatha64",
+      "password": "123abc",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/oksanafrewer/128.jpg",
+      "friends": [
+        {
+          "id": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "lastName": "Kris",
+      "firstName": "Jovani",
+      "email": "Antonia.Upton@gmail.com",
+      "userName": "Alia.Zemlak73",
+      "password": "123abc",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/nellleo/128.jpg",
+      "friends": []
+    },
+    {
+      "id": 4,
+      "lastName": "Bartell",
+      "firstName": "Abraham",
+      "email": "Elton.Trantow@yahoo.com",
+      "userName": "Bria.Gusikowski",
+      "password": "123abc",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bungiwan/128.jpg",
+      "friends": [
+        {
+          "id": 2
+        },
+        {
+          "id": 3
+        }
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "uid": 0,
+      "id": 0,
+      "contentPost": "Rerum soluta id saepe et maiores maiores qui et cumque. Inventore molestiae aspernatur ea. Deleniti pariatur aut nobis sapiente corrupti est deserunt qui voluptatem.",
+      "likes": 1,
+      "created": "2016-12-04T05:45:52.355Z"
+    },
+    {
+      "uid": 0,
+      "id": 1,
+      "contentPost": "Ut incidunt dicta ratione nihil. Ea quas quo. Dolores sunt iure modi autem dolorum. Voluptates molestiae illo cum.",
+      "likes": 0,
+      "created": "2016-12-11T10:19:18.671Z"
+    },
+    {
+      "uid": 1,
+      "id": 2,
+      "contentPost": "Qui odit consequatur accusamus eos et. Laudantium possimus vitae quisquam pariatur ut. Error natus assumenda consequatur ipsa distinctio exercitationem labore est.",
+      "likes": 2,
+      "created": "2017-02-12T15:18:15.288Z"
+    },
+    {
+      "uid": 1,
+      "id": 3,
+      "contentPost": "Quam omnis molestias voluptas odio voluptatem. Blanditiis occaecati consectetur sit impedit. Recusandae pariatur adipisci dolor possimus dolor qui laboriosam non repudiandae. Iure corporis veritatis voluptas quia dolor aut necessitatibus recusandae.",
+      "likes": 1,
+      "created": "2017-03-24T19:17:19.274Z"
+    },
+    {
+      "uid": 2,
+      "id": 4,
+      "contentPost": "Cum nihil sunt laborum voluptate voluptatem rem quo est. Doloremque reprehenderit itaque mollitia minima pariatur et enim omnis. Et ea non dolore vel rerum et. Facere officia consequuntur non.",
+      "likes": 0,
+      "created": "2017-02-07T14:06:23.343Z"
+    },
+    {
+      "uid": 2,
+      "id": 4,
+      "contentPost": "Qui rerum sint perferendis. Ut rerum inventore animi. Consectetur exercitationem voluptatum dolores neque. Iste impedit cupiditate et quia ut porro rem voluptatibus. Eius voluptatem rerum quas.",
+      "likes": 0,
+      "created": "2016-10-14T21:59:50.460Z"
+    },
+    {
+      "uid": 3,
+      "id": 5,
+      "contentPost": "Aut culpa quia sit aperiam et. In non et suscipit aut ipsa voluptas id. Sint omnis molestias enim architecto voluptas atque consectetur maxime magni. Tempora quia reiciendis est et voluptas quis excepturi.",
+      "likes": 2,
+      "created": "2017-08-20T04:17:31.532Z"
+    },
+    {
+      "uid": 3,
+      "id": 6,
+      "contentPost": "Incidunt saepe est culpa praesentium facilis sed fugiat voluptatem. Laboriosam impedit soluta quia vel praesentium porro maiores ea quasi. Illo molestiae dicta cum hic dolores praesentium. Eum et atque natus et cumque.",
+      "likes": 0,
+      "created": "2017-04-05T00:39:06.306Z"
+    },
+    {
+      "uid": 4,
+      "id": 7,
+      "contentPost": "Ut ut omnis beatae sapiente. Magni architecto qui error. Iusto veniam quod veritatis doloremque qui et. Consequatur est fugiat. Delectus reprehenderit omnis eum et praesentium. Autem architecto ad porro rerum.",
+      "likes": 5,
+      "created": "2017-01-20T17:06:25.200Z"
+    },
+    {
+      "uid": 4,
+      "id": 8,
+      "contentPost": "Ipsa ad occaecati. Facere velit a veniam minus. Molestias officia ut sapiente corrupti sit eligendi ea.",
+      "likes": 4,
+      "created": "2017-03-16T23:47:59.362Z"
+    }
+  ]
+}
