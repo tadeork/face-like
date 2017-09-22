@@ -57,11 +57,16 @@ export class FriendsComponent implements OnInit {
   }
 
   removeFriend(friend: Friend): void {
-    this.user.friends.splice(friend.id, 1);
-    this.friendsServ._updateFriends(this.user);
+    const arrayFriends: Friend[] = [];
+    this.user.friends.forEach(fr => {
+      if (friend.id !== fr.id) {
+        arrayFriends.push(fr); }
+    });
+    this.user.friends = arrayFriends;
     this.showPeople();
     this.friendList = [];
     this.friends();
+    this.friendsServ._updateFriends(this.user);
   }
 
   showPeople(): void {
